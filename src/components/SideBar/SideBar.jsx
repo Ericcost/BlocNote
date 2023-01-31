@@ -15,7 +15,7 @@ function SideBar({ notes, onAddNote, onRemoveNote, activeNote, setActiveNote }) 
                             <strong>{note.title}</strong>
                             <button onClick={() => onRemoveNote(note.id)}>delete</button>
                         </div>
-                        <p>{note.body && note.body.substr(0, 100 + "...")}</p>
+                        <p>{note.body && note.body.substr(0, 100) + "..."}</p>
                         <small className='note-meta'>Last Modified {new Date(note.lastModified).toLocaleDateString("en-FR", {
                             hour: "2-digit", 
                             minute: "2-digit"
