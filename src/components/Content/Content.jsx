@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 function Content( {activeNote, onEditNote} ) {
     
@@ -20,9 +21,9 @@ function Content( {activeNote, onEditNote} ) {
             </div>
             <div className='app-main-note-preview'>
                 <h1 className='preview-title'>{activeNote.title}</h1>
-                <div className='markdown-preview'>
+                <ReactMarkdown className='markdown-preview'>
                     {activeNote.body}
-                </div>
+                </ReactMarkdown>
             </div>
         </div>
     )
