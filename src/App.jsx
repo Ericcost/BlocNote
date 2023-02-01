@@ -5,12 +5,13 @@ import SideBar from './components/SideBar/SideBar';
 import './App.css';
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(
+    localStorage.notes ? JSON.parse(localStorage.notes) : []);
   const [activeNote, setActiveNote] = useState(false);
 
-  // useEffect(() => { 
-  //   localStorage.setItem('notes', JSON.stringify(notes));
-  // }, [notes]);
+  useEffect(() => { 
+    localStorage.setItem('notes', JSON.stringify(notes));
+  }, [notes]);
 
 
   const onAddNote = () => {
